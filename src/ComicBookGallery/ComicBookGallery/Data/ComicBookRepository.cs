@@ -58,6 +58,11 @@ namespace ComicBookGallery.Data
 			}
 		};
 
+		public IReadOnlyList<ComicBook> GetComicBooks()
+		{
+			return _comicBooks as IReadOnlyList<ComicBook>;
+		}
+
 		public ComicBook GetComicBook(int id)
 		{
 			return _comicBooks.FirstOrDefault(cb => cb.Id == id); 
