@@ -1,0 +1,5 @@
+{
+	"ConnectionStrings": {
+		"ComicBooks": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ComicBookGallery;Integrated Security=True;MultipleActiveResultSets=True",
+	}
+}
