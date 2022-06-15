@@ -12,7 +12,7 @@ namespace ComicBookControllerModel.Models
 	public class Artist
 	{
 		public int ArtistID { get; set; }
-		[Required, StringLength(100), Column("FullName")]
+		[Required, StringLength(100)]
 		public string Name { get; set; }
 
 		public ICollection<ComicBookArtist> ComicBooks { get; set; }
