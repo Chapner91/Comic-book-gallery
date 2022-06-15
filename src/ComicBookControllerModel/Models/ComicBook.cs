@@ -9,15 +9,29 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ComicBookControllerModel.Models
 {
-	[Table("ComicBook", Schema = "Data")]
+	[Table("ComicBook", Schema = "DATA")]
 	public class ComicBook
 	{
 		public int ComicBookID { get; set; }
-		[Required]
-		public string SeriesTitle { get; set; }
+		public int SeriesID { get; set; }
 		public int IssueNumber { get; set; }
 		public string Description { get; set; }
 		public DateTime PublishedOn { get; set; }
 		public decimal? AverageRating { get; set; }
+
+		public Series Series { get; set; }
+		public ICollection<ComicBookArtist> Artists { get; set; }
+
+		public string DisplayText => $"{Series?.Title}: #{IssueNumber}";
+
+		public ComicBook()
+		{
+			Artists = new List<ComicBookArtist>();
+		}
+
+		public void AddArtist(Artist artist, Role role)
+		{
+			Artists.Add(new ComicBookArtist { Artist = artist, Role = role });
+		}
 	}
 }

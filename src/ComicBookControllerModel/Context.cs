@@ -12,9 +12,12 @@ namespace ComicBookControllerModel
 	{
 		public Context(string connectionString) : base(connectionString) 
 		{
-			Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
+			//Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
+			Database.SetInitializer(new DropCreateDatabaseAlways<Context>());
 		}
 
 		public DbSet<ComicBook> ComicBooks { get; set; }
+		public DbSet<Series> Series { get; set; }
+		public DbSet<Artist> Artists { get; set; }
 	}
 }
