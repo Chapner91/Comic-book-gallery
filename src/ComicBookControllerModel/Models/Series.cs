@@ -20,7 +20,7 @@ namespace ComicBookControllerModel.Models
 		public int SeriesID { get; set; }
 		[Required, StringLength(100)]
 		public string Title { get; set; }
-		public string Discription { get; set; }
+		public string Description { get; set; }
 
 		public ICollection<ComicBook> ComicBooks { get; set; }
 	}
